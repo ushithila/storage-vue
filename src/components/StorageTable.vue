@@ -19,24 +19,27 @@
         </tr>
         </thead>
         <tbody 
-            v-if="data.length === 0"
+            v-if="!data.length"
         >
-        <tr class="table-row">
-            <td class="checkbox-tr">
-                <input class="checkbox" type="checkbox">
-            </td>
-            <td>Folder name</td>
-            <td>Jun 19, 2026</td>
-            <td>--</td>
-            <td class="action-td">
-                <div class="dropdown-btn">
-                    <button class="action-button" type="button">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </button>
-                </div>
-            </td>
+            <tr class="table-row">
+                <td class="checkbox-tr">
+                    <input class="checkbox" type="checkbox">
+                </td>
+                <td>Folder name</td>
+                <td>Jun 19, 2026</td>
+                <td>--</td>
+                <td class="action-td">
+                    <div class="dropdown-btn">
+                        <button class="action-button" type="button">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
             </tr>
         </tbody>
+        <template v-else>
+            <p> No items available </p>
+        </template>
         </table>
     </section>
 </template>
@@ -65,7 +68,6 @@ const schema: Array<StorageSchema> = [
 const data: Array<string> = [];
 </script> 
 <style scoped lang="scss">
-
 table {
     font-size: 16px;
     width: 100%;
@@ -115,14 +117,14 @@ td {
 }
 
 .checkbox:hover {
-    border-color: var(ButtonColor);
+    border-color: var(--button-color);
     outline-style: solid;
     outline-width: 2px;
     outline-color: var(--button-shadow-color);
 }
 
 .checkbox:active {
-    border-color: var(ButtonColor);
+    border-color: var(--button-color);
     outline-width: .25rem;
     outline-color: var(--button-shadow-color);
 }

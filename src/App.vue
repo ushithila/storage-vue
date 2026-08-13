@@ -6,6 +6,6 @@ import Storage from './views/Storage.vue';
     <Storage></Storage>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
     @use '@/styles/main.scss' as *;
 </style>

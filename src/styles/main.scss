@@ -32,7 +32,7 @@ button {
     align-items: center;
     justify-content: center;
 }
-ƒ
+
 .storage-container {
     display: flex;
     flex-direction: column;
@@ -164,6 +164,36 @@ button {
 .table-container {
     display: flex;
     overflow-y: auto;
+}
+
+.directory .file {
+    font-size: 32px;
+}
+
+.directory {
+    color: var(--directory-icon-color);
+}
+
+.file {
+    color: var(--file-icon-color);
+}
+
+.table-row:has(.checkbox:checked) {
+    background-color: var(--row-checked-color);
+}
+
+.table-row:hover {
+    cursor: pointer;
+    background-color: var(--primary-background-color);
+}
+
+#storage-table>thead>tr>th:last-child {
+    padding: 0 2rem;
+}
+
+.action-td {
+    display: flex;
+    justify-content: center;
 }
 
 .action-button {
