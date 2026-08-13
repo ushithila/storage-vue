@@ -18,11 +18,23 @@
             </th>
         </tr>
         </thead>
-        <tbody>
-            <tr 
-                v-if="data.length === 0"
-            >
-                <td> No items are available </td>
+        <tbody 
+            v-if="data.length === 0"
+        >
+        <tr class="table-row">
+            <td class="checkbox-tr">
+                <input class="checkbox" type="checkbox">
+            </td>
+            <td>Folder name</td>
+            <td>Jun 19, 2026</td>
+            <td>--</td>
+            <td class="action-td">
+                <div class="dropdown-btn">
+                    <button class="action-button" type="button">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </div>
+            </td>
             </tr>
         </tbody>
         </table>
@@ -52,7 +64,8 @@ const schema: Array<StorageSchema> = [
 // turn into prop
 const data: Array<string> = [];
 </script> 
-<style>
+<style scoped lang="scss">
+
 table {
     font-size: 16px;
     width: 100%;
@@ -102,14 +115,14 @@ td {
 }
 
 .checkbox:hover {
-    border-color: var(--button-color);
+    border-color: var(ButtonColor);
     outline-style: solid;
     outline-width: 2px;
     outline-color: var(--button-shadow-color);
 }
 
 .checkbox:active {
-    border-color: var(--button-color);
+    border-color: var(ButtonColor);
     outline-width: .25rem;
     outline-color: var(--button-shadow-color);
 }
@@ -119,19 +132,9 @@ td {
     border: 1px solid var(--button-color);
 }
 
-/* .checkbox:checked::after {
-    content: url(CheckIcon);
-} */
-
-.checkbox:indeterminate {
-    background-color: var(--button-color);
-    border: 1px solid var(--button-color);
-    content: url('../assets/minus.svg');
-}
-
 .checkbox:checked:active {
-    background-color: var(--search-active-color);
-    border: 1px solid var(--search-active-color);
+    background-color: var(--button-shadow-color);
+    border: 1px solid var(--button-shadow-color);
 }
 
 </style>

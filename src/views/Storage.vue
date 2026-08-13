@@ -1,10 +1,12 @@
 <template>
-    <h1>Loading data in this</h1>
+    <StorageTable></StorageTable>
 </template>
-<script lang="ts">
-import StorageTable from '@/components/StorageTable.vue';   
-</script>
-<style>
-</style>
 
-<!-- loading data in  -->
+<script setup lang="ts">
+import StorageTable from '@/components/StorageTable.vue';
+import { getDirectory } from '@/api/ServiceStorage';
+ 
+</script>
+
+<style scoped lang="scss">
+</style>

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import StorageTable from './components/StorageTable.vue';
+import Storage from './views/Storage.vue';
 </script>
 
 <template>
-    <StorageTable></StorageTable>
+    <Storage></Storage>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+    @use '@/styles/main.scss' as *;
 </style>
