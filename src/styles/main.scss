@@ -33,39 +33,6 @@ button {
     justify-content: center;
 }
 
-.storage-container {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 5rem);
-    border: 1px solid var(--container-color);
-    border-radius: 10px;
-    background: var(--secondary-background-color);
-    margin: 1.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.storage-header {
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem;
-    margin: 0;
-    min-height: 4.5rem;
-    color: var(--header-color);
-    font-family: sans-serif;
-    font-size: 24px;
-}
-
-.grid-header {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--section-border);
-    border-bottom: 1px solid var(--section-border);
-    font-size: 20px;
-}
-
 .multi-select-container {
     display: none;
     align-items: center;
@@ -225,7 +192,6 @@ ul {
 
 ul li {
     width: 1.5rem;
-    height: 1.5rem;
     padding-right: .25rem;
 }
 
@@ -260,3 +226,4 @@ ul li {
     padding: 0 .75rem;
     gap: .25rem;
 }
+

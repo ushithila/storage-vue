@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="table-container">
         <table id="storage-table">
         <thead>
         <tr>
@@ -31,7 +31,7 @@
                 <td class="action-td">
                     <div class="dropdown-btn">
                         <button class="action-button" type="button">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <!-- add dropdown icon -->
                         </button>
                     </div>
                 </td>
@@ -138,5 +138,4 @@ td {
     background-color: var(--button-shadow-color);
     border: 1px solid var(--button-shadow-color);
 }
-
 </style>
