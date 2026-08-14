@@ -23,14 +23,27 @@
         >
             <tr class="table-row">
                 <td>
-                    <input class="checkbox" type="checkbox">
+                    <input 
+                        class="checkbox" 
+                        type="checkbox"
+                    >
                 </td>
-                <td>Folder name</td>
+                <td>
+                    <FontAwesomeIcon 
+                        :icon="faFolder"
+                        size="lg"
+                        class="directory-icon"
+                    />
+                    Folder name
+                </td>
                 <td>Jun 19, 2026</td>
                 <td>--</td>
                 <td>
-                    <button class="action-button" type="button">
-                        <FontAwesomeIcon :icon="faEllipsisVertical" />
+                    <button 
+                        class="action-button" 
+                        type="button"
+                    >
+                        <FontAwesomeIcon :icon="faEllipsisVertical"/>
                     </button>
                 </td>
             </tr>
@@ -43,7 +56,7 @@
 </template>
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const schema: Array<StorageSchema> = [
@@ -146,6 +159,10 @@ td {
 
 .table-row:has(.checkbox:checked) {
     background-color: var(--row-checked-color);
+}
+
+.directory-icon{
+    color: var(--directory-icon-color);
 }
 
 .action-button {
