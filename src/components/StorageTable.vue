@@ -31,7 +31,7 @@
                 <td class="action-td">
                     <div class="dropdown-btn">
                         <button class="action-button" type="button">
-                            <!-- add dropdown icon -->
+                            <FontAwesomeIcon :icon="faEllipsisVertical" />
                         </button>
                     </div>
                 </td>
@@ -45,6 +45,8 @@
 </template>
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
+import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const schema: Array<StorageSchema> = [
     {

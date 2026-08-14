@@ -5,13 +5,11 @@
         <StorageTable />
     </main>
 </template>
-
 <script setup lang="ts">
 import ActionBar from '@/components/ActionBar.vue';
 import StorageHeader from '@/components/StorageHeader.vue';
 import StorageTable from '@/components/StorageTable.vue';
 </script>
-
 <style scoped lang="scss">
 main {
     display: flex;

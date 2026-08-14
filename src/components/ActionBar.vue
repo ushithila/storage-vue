@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="action-bar">
         <ol>
             <li>
                 <b> My files </b>
@@ -7,9 +7,9 @@
         </ol>
     </div>
 </template>
-<script lang="ts"></script>
+<script setup lang="ts"></script>
 <style scoped>
-div {
+.action-bar {
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 1rem;

@@ -1,7 +1,7 @@
 <template>
     <h1>Storage</h1>
 </template>
-<script lang="ts"></script>
+<script setup lang="ts"></script>
 <style scoped>
 h1 {
     display: flex;
