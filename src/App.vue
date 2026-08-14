@@ -2,7 +2,7 @@
     <Storage />
 </template>
 <script setup lang="ts">
-import Storage from './views/Storage.vue';
+import Storage from './views/StoragePage.vue';
 
 </script>
 <style lang="scss">
