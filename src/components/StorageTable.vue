@@ -22,18 +22,16 @@
             v-if="!data.length"
         >
             <tr class="table-row">
-                <td class="checkbox-tr">
+                <td>
                     <input class="checkbox" type="checkbox">
                 </td>
                 <td>Folder name</td>
                 <td>Jun 19, 2026</td>
                 <td>--</td>
-                <td class="action-td">
-                    <div class="dropdown-btn">
-                        <button class="action-button" type="button">
-                            <FontAwesomeIcon :icon="faEllipsisVertical" />
-                        </button>
-                    </div>
+                <td>
+                    <button class="action-button" type="button">
+                        <FontAwesomeIcon :icon="faEllipsisVertical" />
+                    </button>
                 </td>
             </tr>
         </tbody>
@@ -95,12 +93,17 @@ tr {
     padding: 0 2rem;
 }
 
+#storage-table>tbody>tr>td:last-child {
+    display: flex;
+    justify-content: center;
+}
+
 td {
     display: flex;
     gap: 0.5rem;
 }
 
-.checkbox-tr,
+#storage-table td:has(input[type="checkbox"]),
 #storage-table th:has(input[type="checkbox"]) {
     padding: 0 1rem 0 1.5rem;
 }
@@ -139,5 +142,21 @@ td {
 .checkbox:checked:active {
     background-color: var(--button-shadow-color);
     border: 1px solid var(--button-shadow-color);
+}
+
+.table-row:has(.checkbox:checked) {
+    background-color: var(--row-checked-color);
+}
+
+.action-button {
+    color: var(--text-color);
+    height: 2rem;
+    width: 2rem;
+    border-radius: .25rem;
+    transition: .3s;
+}
+
+.action-button:hover {
+    background-color: var(--border-color);
 }
 </style>
