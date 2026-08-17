@@ -1,56 +1,56 @@
 <template>
     <section class="table-container">
-        <table id="storage-table">
-        <thead>
-        <tr>
-            <th>
-                <input
-                    id="select-all-checkbox"
-                    class="checkbox"
-                    type="checkbox"
-                >
-            </th>
-            <th
-                v-for="({ name, keyName }, index) in schema"
-                :key="`${index}-${keyName}`"
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input
+                            id="select-all-checkbox"
+                            class="checkbox"
+                            type="checkbox"
+                        >
+                    </th>
+                    <th
+                        v-for="({ name, keyName }, index) in schema"
+                        :key="`${index}-${keyName}`"
+                    >
+                        {{ name }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody 
+                v-if="!data.length"
             >
-                {{ name }}
-            </th>
-        </tr>
-        </thead>
-        <tbody 
-            v-if="!data.length"
-        >
-            <tr class="table-row">
-                <td>
-                    <input 
-                        class="checkbox" 
-                        type="checkbox"
-                    >
-                </td>
-                <td>
-                    <FontAwesomeIcon 
-                        :icon="faFolder"
-                        size="lg"
-                        class="directory-icon"
-                    />
-                    Folder name
-                </td>
-                <td>Jun 19, 2026</td>
-                <td>--</td>
-                <td>
-                    <button 
-                        class="action-button" 
-                        type="button"
-                    >
-                        <FontAwesomeIcon :icon="faEllipsisVertical"/>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-        <template v-else>
-            <p> No items available </p>
-        </template>
+                <tr class="table-row">
+                    <td>
+                        <input 
+                            class="checkbox" 
+                            type="checkbox"
+                        >
+                    </td>
+                    <td>
+                        <FontAwesomeIcon 
+                            :icon="faFolder"
+                            size="lg"
+                            class="directory-icon"
+                        />
+                        Folder name
+                    </td>
+                    <td>Jun 19, 2026</td>
+                    <td>--</td>
+                    <td>
+                        <button 
+                            class="action-button" 
+                            type="button"
+                        >
+                            <FontAwesomeIcon :icon="faEllipsisVertical"/>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            <template v-else>
+                <p> No items available </p>
+            </template>
         </table>
     </section>
 </template>
@@ -77,7 +77,8 @@ const schema: Array<StorageSchema> = [
         name: 'Actions',
     }
 ];
-// turn into prop
+// turn into prop, and pass that in table
+//create button, props are text and icon 
 const data: Array<string> = [];
 </script> 
 <style scoped lang="scss">
@@ -102,11 +103,11 @@ tr {
     border-bottom: 1px solid var(--section-border);
 }
 
-#storage-table>thead>tr>th:last-child {
+table>thead>tr>th:last-child {
     padding: 0 2rem;
 }
 
-#storage-table>tbody>tr>td:last-child {
+table>tbody>tr>td:last-child {
     display: flex;
     justify-content: center;
 }
@@ -116,8 +117,8 @@ td {
     gap: 0.5rem;
 }
 
-#storage-table td:has(input[type="checkbox"]),
-#storage-table th:has(input[type="checkbox"]) {
+table td:has(input[type="checkbox"]),
+table th:has(input[type="checkbox"]) {
     padding: 0 1rem 0 1.5rem;
 }
 

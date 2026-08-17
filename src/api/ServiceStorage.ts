@@ -1,4 +1,4 @@
-import entries from './DirectoryData.ts'
+import entries from './directoryData.ts'
 
 const knownPaths = new Set(entries.map((entry) => entry.path))
 const knownIds = new Set(entries.map((entry) => entry.id))
