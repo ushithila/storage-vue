@@ -78,7 +78,6 @@ const schema: Array<StorageSchema> = [
     }
 ];
 // turn into prop, and pass that in table
-//create button, props are text and icon 
 const data: Array<string> = [];
 </script> 
 <style scoped lang="scss">
