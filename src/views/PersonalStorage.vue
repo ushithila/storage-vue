@@ -1,12 +1,14 @@
 <template>
     <main>
         <h1>Storage</h1>
+        <div class="action-bar">
+            <b> My files </b>
+        </div>
         <ActionBar />
         <StorageTable />
     </main>
 </template>
 <script setup lang="ts">
-import ActionBar from '@/components/ActionBar.vue';
 import StorageTable from '@/components/StorageTable.vue';
 </script>
 <style scoped lang="scss">
@@ -30,5 +32,16 @@ h1 {
     color: var(--header-color);
     font-family: sans-serif;
     font-size: 24px;
+}
+
+.action-bar {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--section-border);
+    border-bottom: 1px solid var(--section-border);
+    font-size: 20px;
 }
 </style>
