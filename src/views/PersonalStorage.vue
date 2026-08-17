@@ -4,7 +4,6 @@
         <div class="action-bar">
             <b> My files </b>
         </div>
-        <ActionBar />
         <StorageTable />
     </main>
 </template>
