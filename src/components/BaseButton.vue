@@ -4,9 +4,7 @@
         :class="`btn-${variant}`"
     >
         <slot name="icon" />
-        <slot>
-            {{ title }}
-        </slot>
+        {{ title }}
     </button>
 </template>
 <script setup lang="ts">
@@ -39,6 +37,18 @@ withDefaults(defineProps<{
         
         &:active {
             background-color: var(--search-active-color);
+        }
+    }
+
+    &-neutral{
+        color: var(--text-color);
+        height: 2rem;
+        width: 2rem;
+        border-radius: .25rem;
+        transition: .3s;
+
+        &:hover {
+            background-color: var(--border-color);
         }
     }
 }

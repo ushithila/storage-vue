@@ -41,6 +41,10 @@
                     <td>Jun 19, 2026</td>
                     <td>--</td>
                     <td>
+                        <BaseButton
+                            variant="neutral"
+                        >
+                        </BaseButton>
                     </td>
                 </tr>
             </tbody>
@@ -52,6 +56,7 @@
 </template>
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
+import BaseButton from '@/components/BaseButton.vue';
 import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 

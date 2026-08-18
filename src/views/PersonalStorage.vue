@@ -14,6 +14,9 @@
 <script setup lang="ts">
 import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 </script>
 <style scoped lang="scss">
 main {
