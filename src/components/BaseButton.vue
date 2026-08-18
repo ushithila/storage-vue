@@ -1,6 +1,5 @@
 <template>
     <button
-        class="btn"
         :class="`btn-${variant}`"
     >
         <slot name="icon" />
