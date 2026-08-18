@@ -25,7 +25,6 @@
                 <tr class="table-row">
                     <td>
                         <input
-                            v-if="false"
                             class="checkbox" 
                             type="checkbox"
                         >
@@ -42,8 +41,8 @@
                     <td>--</td>
                     <td>
                         <BaseButton
-                            variant="neutral"
-                            :icon="faEllipsisVertical"
+                            variant='neutral'
+                            :icon='faEllipsisVertical'
                         >
                         </BaseButton>
                     </td>
@@ -162,11 +161,12 @@ table {
     &:checked {
         background-color: var(--button-color);
         border: 1px solid var(--button-color);
+        content: url('../../public/assets/check.svg');
     }
 
     &:checked:active {
-        background-color: var(--button-shadow-color);
-        border: 1px solid var(--button-shadow-color);
+        background-color: var(--search-active-color);
+        border: 1px solid var(--search-active-color);
     }
 }
 

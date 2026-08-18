@@ -4,7 +4,7 @@
         <div class="action-bar">
             <b> My files </b>
             <BaseButton
-                title="Add new"
+                title='Add new'
                 :icon='faPlus'
             >
             </BaseButton>

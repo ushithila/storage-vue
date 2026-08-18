@@ -5,7 +5,7 @@
     >
         <FontAwesomeIcon 
             v-if='icon'
-            :icon="icon" 
+            :icon='icon' 
         />
         {{ title }}
     </button>
