@@ -3,12 +3,17 @@
         <h1>Storage</h1>
         <div class="action-bar">
             <b> My files </b>
+            <BaseButton
+                title="Add new"
+            >
+            </BaseButton>
         </div>
         <StorageTable />
     </main>
 </template>
 <script setup lang="ts">
 import StorageTable from '@/components/StorageTable.vue';
+import BaseButton from '@/components/BaseButton.vue';
 </script>
 <style scoped lang="scss">
 main {

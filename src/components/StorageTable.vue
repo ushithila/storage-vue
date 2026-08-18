@@ -5,6 +5,7 @@
                 <tr>
                     <th>
                         <input
+                            v-if="false"
                             id="select-all-checkbox"
                             class="checkbox"
                             type="checkbox"
@@ -23,7 +24,8 @@
             >
                 <tr class="table-row">
                     <td>
-                        <input 
+                        <input
+                            v-if="false"
                             class="checkbox" 
                             type="checkbox"
                         >
@@ -39,12 +41,6 @@
                     <td>Jun 19, 2026</td>
                     <td>--</td>
                     <td>
-                        <button 
-                            class="action-button" 
-                            type="button"
-                        >
-                            <FontAwesomeIcon :icon="faEllipsisVertical"/>
-                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -56,7 +52,7 @@
 </template>
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
-import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const schema: Array<StorageSchema> = [
@@ -84,41 +80,52 @@ const data: Array<string> = [];
 table {
     font-size: 16px;
     width: 100%;
+
+    thead {
+        z-index: 1;
+        position: sticky;
+        top: 0;
+        background-color: var(--secondary-background-color);
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: auto 1fr 12.5rem 8rem 7rem;
+        align-items: center;
+        text-align: left;
+        height: 3rem;
+        border-bottom: 1px solid var(--section-border);
+
+        td {
+            display: flex;
+            gap: 0.5rem;
+        }
+    }
+
+    thead>tr>th:last-child {
+        padding: 0 2rem;
+    }
+
+    tbody>tr>td:last-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    td:has(input[type="checkbox"]),
+    th:has(input[type="checkbox"]) {
+        padding: 0 1rem 0 1.5rem;
+    }
 }
 
-thead {
-    z-index: 1;
-    position: sticky;
-    top: 0;
-    background-color: var(--secondary-background-color);
-}
+.table-row {
+    &:has(.checkbox:checked) {
+        background-color: var(--row-checked-color);
+    }
 
-tr {
-    display: grid;
-    grid-template-columns: auto 1fr 12.5rem 8rem 7rem;
-    align-items: center;
-    text-align: left;
-    height: 3rem;
-    border-bottom: 1px solid var(--section-border);
-}
-
-table>thead>tr>th:last-child {
-    padding: 0 2rem;
-}
-
-table>tbody>tr>td:last-child {
-    display: flex;
-    justify-content: center;
-}
-
-td {
-    display: flex;
-    gap: 0.5rem;
-}
-
-table td:has(input[type="checkbox"]),
-table th:has(input[type="checkbox"]) {
-    padding: 0 1rem 0 1.5rem;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--primary-background-color);
+    }
 }
 
 .checkbox {
@@ -132,48 +139,32 @@ table th:has(input[type="checkbox"]) {
     width: 1rem;
     border: 1px solid var(--text-color);
     cursor: pointer;
-}
 
-.checkbox:hover {
-    border-color: var(--button-color);
-    outline-style: solid;
-    outline-width: 2px;
-    outline-color: var(--button-shadow-color);
-}
+    &:hover {
+        border-color: var(--button-color);
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: var(--button-shadow-color);
+    }
 
-.checkbox:active {
-    border-color: var(--button-color);
-    outline-width: .25rem;
-    outline-color: var(--button-shadow-color);
-}
+    &:active {
+        border-color: var(--button-color);
+        outline-width: .25rem;
+        outline-color: var(--button-shadow-color);
+    }
 
-.checkbox:checked {
-    background-color: var(--button-color);
-    border: 1px solid var(--button-color);
-}
+    &:checked {
+        background-color: var(--button-color);
+        border: 1px solid var(--button-color);
+    }
 
-.checkbox:checked:active {
-    background-color: var(--button-shadow-color);
-    border: 1px solid var(--button-shadow-color);
-}
-
-.table-row:has(.checkbox:checked) {
-    background-color: var(--row-checked-color);
+    &:checked:active {
+        background-color: var(--button-shadow-color);
+        border: 1px solid var(--button-shadow-color);
+    }
 }
 
 .directory-icon{
     color: var(--directory-icon-color);
-}
-
-.action-button {
-    color: var(--text-color);
-    height: 2rem;
-    width: 2rem;
-    border-radius: .25rem;
-    transition: .3s;
-}
-
-.action-button:hover {
-    background-color: var(--border-color);
 }
 </style>
