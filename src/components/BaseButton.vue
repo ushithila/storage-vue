@@ -1,16 +1,23 @@
 <template>
     <button
+        class="btn"
         :class="`btn-${variant}`"
     >
-        <slot name="icon" />
+        <FontAwesomeIcon 
+            v-if='icon'
+            :icon="icon" 
+        />
         {{ title }}
     </button>
 </template>
 <script setup lang="ts">
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 withDefaults(defineProps<{
     variant?: 'primary' | 'neutral',
     title?: string ,
-    icon?: boolean,
+    icon?: IconDefinition,
 }>(), {
     variant: 'primary',
 });

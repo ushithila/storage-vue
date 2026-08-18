@@ -5,6 +5,7 @@
             <b> My files </b>
             <BaseButton
                 title="Add new"
+                :icon='faPlus'
             >
             </BaseButton>
         </div>
@@ -14,7 +15,6 @@
 <script setup lang="ts">
 import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 </script>

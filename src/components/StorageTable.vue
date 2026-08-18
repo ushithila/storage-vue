@@ -43,6 +43,7 @@
                     <td>
                         <BaseButton
                             variant="neutral"
+                            :icon="faEllipsisVertical"
                         >
                         </BaseButton>
                     </td>
@@ -57,7 +58,7 @@
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
 import BaseButton from '@/components/BaseButton.vue';
-import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const schema: Array<StorageSchema> = [
