@@ -36,10 +36,10 @@ withDefaults(defineProps<{
     }
 
     &-neutral {
-        color: var(--text-color);
+        color: var(--button-neutral-color);
 
         &:hover {
-            background-color: var(--border-color);
+            background-color: var(--button-neutral-hover-color);
         }
     }
 }
