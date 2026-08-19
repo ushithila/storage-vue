@@ -23,23 +23,23 @@ withDefaults(defineProps<{
     transition: .3s;
 
     &-primary {
-        background-color: var(--button-primary-color);
-        color: var(--button-text-primary-color);
+        background-color: var(--button-primary);
+        color: var(--button-text-primary);
 
         &:hover {
-            background-color: var(--button-primary-hover-color);
+            background-color: var(--button-primary-hover);
         }
         
         &:active {
-            background-color: var(--button-primary-active-color);
+            background-color: var(--button-primary-active);
         }
     }
 
     &-neutral {
-        color: var(--button-neutral-color);
+        color: var(--button-neutral);
 
         &:hover {
-            background-color: var(--button-neutral-hover-color);
+            background-color: var(--border);
         }
     }
 }

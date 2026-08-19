@@ -2,30 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Open Sans');
 
 :root {
-    --primary-background-color: #F6F7F9;
-    --secondary-background-color: #FFFFFF;
+    --primary-background: #F6F7F9;
+    --secondary-background: #FFFFFF;
     --section-border: #ECEFF2;
-    --button-primary-color: #1976D2;
-    --button-text-primary-color: #FFFFFF;
-    --text-color: #3E5462;
-    --button-primary-hover-color: #004FAA;
-    --button-primary-active-color: #003B71;
-    --button-neutral-color: #3E5462;
-    --button-neutral-hover-color: #DBE1E5;
-    --button-shadow-color: #D9EBFF;
-    --border-color: #DBE1E5;
-    --header-color: #43525C;
-    --row-checked-color: #ECF5FF;
-    --container-color: #ECEEEF;
-    --primary-button-color: #3E5462;
-    --secondary-button-color: #BAC5CD;
-    --file-icon-color: #5FBCC3;
-    --directory-icon-color: #55A4FF;
-    --modal-background: #FFFFFF;
-    --model-border-color: #ECEEEF;
-    --multi-button-hover-color: #DBE1E5;
-    --modal-shadow-color: #00000026;
-    --modal-text-color: #43525C;
-    --input-hover-color: #1976D2;
-    --file-title-color: #1976D2;
+    --container: #ECEEEF;
+    --border: #DBE1E5;
+    --header: #43525C;
+    --text: #3E5462;
+    --button-primary: #1976D2;
+    --button-text-primary: #FFFFFF;
+    --button-primary-hover: #004FAA;
+    --button-primary-active: #003B71;
+    --button-neutral: #3E5462;
+    --button-neutral-hover: #DBE1E5;
+    --button-shadow: #D9EBFF;
+    --row-checked: #ECF5FF;
+    --pagination-button: #3E5462;
+    --pagination--button-disabled: #BAC5CD;
+    --file-icon: #5FBCC3;
+    --directory-icon: #55A4FF;
 }

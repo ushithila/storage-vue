@@ -28,9 +28,9 @@ main {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 5rem);
-    border: 1px solid var(--container-color);
+    border: 1px solid var(--container);
     border-radius: 10px;
-    background: var(--secondary-background-color);
+    background: var(--secondary-background);
     margin: 1.5rem;
     padding-bottom: 0.5rem;
 }
@@ -41,7 +41,7 @@ h1 {
     padding: 0 1.5rem;
     margin: 0;
     min-height: 4.5rem;
-    color: var(--header-color);
+    color: var(--header);
     font-family: sans-serif;
     font-size: 24px;
 }

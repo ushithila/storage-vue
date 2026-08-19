@@ -94,7 +94,7 @@ table {
         z-index: 1;
         position: sticky;
         top: 0;
-        background-color: var(--secondary-background-color);
+        background-color: var(--secondary-background);
     }
 
     tr {
@@ -128,12 +128,12 @@ table {
 
 .table-row {
     &:has(.checkbox:checked) {
-        background-color: var(--row-checked-color);
+        background-color: var(--row-checked);
     }
 
     &:hover {
         cursor: pointer;
-        background-color: var(--primary-background-color);
+        background-color: var(--primary-background);
     }
 }
 
@@ -146,25 +146,25 @@ table {
     border-radius: .25rem;
     height: 1rem;
     width: 1rem;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--text);
     cursor: pointer;
 
     &:hover {
-        border-color: var(--button-color);
+        border-color: var(--button-primary);
         outline-style: solid;
         outline-width: 2px;
-        outline-color: var(--button-shadow-color);
+        outline-color: var(--button-shadow);
     }
 
     &:active {
-        border-color: var(--button-color);
+        border-color: var(--button-primary);
         outline-width: .25rem;
-        outline-color: var(--button-shadow-color);
+        outline-color: var(--button-shadow);
     }
 
     &:checked {
-        background-color: var(--button-color);
-        border: 1px solid var(--button-color);
+        background-color: var(--button-primary);
+        border: 1px solid var(--button-primary);
     }
 
     &:checked::after {
@@ -172,13 +172,13 @@ table {
     }
 
     &:checked:active {
-        background-color: var(--search-active-color);
-        border: 1px solid var(--search-active-color);
+        background-color: var(--button-primary-active);
+        border: 1px solid var(--button-primary-active);
     }
 }
 
 .directory-icon {
-    color: var(--directory-icon-color);
+    color: var(--directory-icon);
 }
 
 .dropdown-button {
