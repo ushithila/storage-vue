@@ -18,9 +18,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody
-                v-if="data.length == 0"    
-            >
+            <tbody v-if="!data.length">
                 <tr class="table-row">
                     <td>
                         <input
@@ -41,7 +39,7 @@
                     <td>
                         <BaseButton
                             variant="neutral"
-                            class="dropdown-button"
+                            class="action-button"
                         >
                             <template #icon>
                                 <FontAwesomeIcon :icon="faEllipsisVertical"/>
@@ -179,11 +177,5 @@ table {
 
 .directory-icon {
     color: var(--directory-icon);
-}
-
-.dropdown-button {
-    height: 2rem;
-    width: 2rem;
-    border-radius: .25rem;
 }
 </style>

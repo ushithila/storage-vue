@@ -4,7 +4,7 @@
         <div class="action-bar">
             <b> My files </b>
             <BaseButton
-                title='Add new'
+                title="Add new"
                 variant="primary"
                 class="add-button"
             >
@@ -58,10 +58,6 @@ h1 {
 }
 
 .add-button {
-    gap: 0.5rem;
-    height: 2.5rem;
-    padding: .625rem;
-    border-radius: 6px;
-    font-size: 14px;
+    width: 6rem;
 }
 </style>

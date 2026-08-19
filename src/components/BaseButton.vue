@@ -1,7 +1,10 @@
 <template>
     <button
         class="btn"
-        :class="`btn-${variant}`"
+        :class="[
+            `btn-${variant}`,
+            `btn-${size}`,
+        ]"
     >
         <slot name="icon" />
         {{ title }}
@@ -9,10 +12,12 @@
 </template>
 <script setup lang="ts">
 withDefaults(defineProps<{
-    variant?: 'primary' | 'neutral',
-    title?: string 
+    variant?: "primary" | "neutral",
+    title?: string, 
+    size?: "xs" | "s" | "md" | "lg",
 }>(), {
-    variant: 'primary',
+    variant: "primary",
+    size: "md",
 });
 </script>
 <style scoped lang="scss">
@@ -20,6 +25,9 @@ withDefaults(defineProps<{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    font-size: 14px;
     transition: .3s;
 
     &-primary {
@@ -41,6 +49,26 @@ withDefaults(defineProps<{
         &:hover {
             background-color: var(--border);
         }
+    }
+
+    &-xs{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    &-s{
+        height: 2rem;
+        width: 2rem;
+    }
+
+    &-md{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    &-lg{
+        height: 3rem;
+        width: 3rem;
     }
 }
 </style>
