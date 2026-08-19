@@ -5,7 +5,6 @@
                 <tr>
                     <th>
                         <input
-                            v-if="false"
                             id="select-all-checkbox"
                             class="checkbox"
                             type="checkbox"
@@ -19,8 +18,8 @@
                     </th>
                 </tr>
             </thead>
-            <tbody 
-                v-if="!data.length"
+            <tbody
+                v-if="data.length == 0"    
             >
                 <tr class="table-row">
                     <td>
@@ -41,15 +40,20 @@
                     <td>--</td>
                     <td>
                         <BaseButton
-                            variant='neutral'
-                            :icon='faEllipsisVertical'
+                            variant="neutral"
+                            class="dropdown-button"
                         >
+                            <template #icon>
+                                <FontAwesomeIcon :icon="faEllipsisVertical"/>
+                            </template>
                         </BaseButton>
                     </td>
                 </tr>
             </tbody>
-            <template v-else>
-                <p> No items available </p>
+            <template 
+                v-else
+            >
+                No items available.
             </template>
         </table>
     </section>
@@ -161,6 +165,9 @@ table {
     &:checked {
         background-color: var(--button-color);
         border: 1px solid var(--button-color);
+    }
+
+    &:checked::after {
         content: url('../../public/assets/check.svg');
     }
 
@@ -170,7 +177,13 @@ table {
     }
 }
 
-.directory-icon{
+.directory-icon {
     color: var(--directory-icon-color);
+}
+
+.dropdown-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: .25rem;
 }
 </style>

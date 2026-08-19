@@ -5,8 +5,12 @@
             <b> My files </b>
             <BaseButton
                 title='Add new'
-                :icon='faPlus'
+                variant="primary"
+                class="add-button"
             >
+                <template #icon>
+                    <FontAwesomeIcon :icon="faPlus"/>
+                </template>
             </BaseButton>
         </div>
         <StorageTable />
@@ -16,6 +20,7 @@
 import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 </script>
 <style scoped lang="scss">
@@ -50,5 +55,13 @@ h1 {
     border-top: 1px solid var(--section-border);
     border-bottom: 1px solid var(--section-border);
     font-size: 20px;
+}
+
+.add-button {
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: .625rem;
+    border-radius: 6px;
+    font-size: 14px;
 }
 </style>
