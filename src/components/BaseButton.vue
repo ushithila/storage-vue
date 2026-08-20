@@ -72,7 +72,8 @@ withDefaults(defineProps<{
 
     &:disabled {
         pointer-events: none;
-
+        cursor: default;
+        
         &.btn-primary {
             background-color: var(--button-disabled);
         }
