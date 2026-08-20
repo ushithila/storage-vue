@@ -1,11 +1,12 @@
 <template>
     <button
+        type="button"
+        :disabled="disabled"
         class="btn"
         :class="[
             `btn-${variant}`,
             `btn-${size}`,
         ]"
-        type="button"
     >
         <slot name="icon" />
         {{ title }}
@@ -16,6 +17,7 @@ withDefaults(defineProps<{
     variant?: "primary" | "neutral",
     title?: string, 
     size?: "xs" | "s" | "md",
+    disabled?: boolean,
 }>(), {
     variant: "primary",
     size: "md",
@@ -36,7 +38,7 @@ withDefaults(defineProps<{
         background-color: var(--button-primary);
         color: var(--button-text-primary);
 
-        &:hover {
+        &:hover:enabled {
             background-color: var(--button-primary-hover);
         }
         
@@ -48,7 +50,7 @@ withDefaults(defineProps<{
     &-neutral {
         color: var(--button-neutral);
 
-        &:hover {
+        &:hover:enabled {
             background-color: var(--border);
         }
     }
@@ -67,5 +69,16 @@ withDefaults(defineProps<{
         height: 2.5rem;
         width: 2.5rem;
     }
+
+    &:disabled {
+        &.btn-primary {
+            background-color: var(--button-disabled);
+            cursor: default;
+        }
+
+        &.btn-neutral {
+            color: var(--button-disabled);
+        }
+    }   
 }
 </style>

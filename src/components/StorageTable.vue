@@ -40,6 +40,7 @@
                         <BaseButton
                             variant="neutral"
                             class="action-button"
+                            disabled
                         >
                             <template #icon>
                                 <FontAwesomeIcon :icon="faEllipsisVertical"/>
