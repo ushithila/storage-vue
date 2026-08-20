@@ -48,7 +48,7 @@ h1 {
 
 .action-bar {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
     align-items: center;
     padding: 1rem 1.5rem;
@@ -58,6 +58,7 @@ h1 {
 }
 
 .add-button {
-    width: 6rem;
+    width: 100%;
+    padding: .625rem;
 }
 </style>

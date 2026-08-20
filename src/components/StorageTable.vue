@@ -48,9 +48,7 @@
                     </td>
                 </tr>
             </tbody>
-            <template 
-                v-else
-            >
+            <template v-else>
                 No items available.
             </template>
         </table>

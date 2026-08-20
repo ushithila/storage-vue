@@ -5,6 +5,7 @@
             `btn-${variant}`,
             `btn-${size}`,
         ]"
+        type="button"
     >
         <slot name="icon" />
         {{ title }}
@@ -14,7 +15,7 @@
 withDefaults(defineProps<{
     variant?: "primary" | "neutral",
     title?: string, 
-    size?: "xs" | "s" | "md" | "lg",
+    size?: "xs" | "s" | "md",
 }>(), {
     variant: "primary",
     size: "md",
@@ -27,6 +28,7 @@ withDefaults(defineProps<{
     justify-content: center;
     gap: 0.5rem;
     border-radius: 6px;
+    font-family: Open Sans;
     font-size: 14px;
     transition: .3s;
 
@@ -51,24 +53,19 @@ withDefaults(defineProps<{
         }
     }
 
-    &-xs{
+    &-xs {
         height: 1.5rem;
         width: 1.5rem;
     }
 
-    &-s{
+    &-s {
         height: 2rem;
         width: 2rem;
     }
 
-    &-md{
+    &-md {
         height: 2.5rem;
         width: 2.5rem;
-    }
-
-    &-lg{
-        height: 3rem;
-        width: 3rem;
     }
 }
 </style>
