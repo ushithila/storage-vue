@@ -146,14 +146,14 @@ table {
     border: 1px solid var(--text);
     cursor: pointer;
 
-    &:hover {
+    &:hover:enabled {
         border-color: var(--button-primary);
         outline-style: solid;
         outline-width: 2px;
         outline-color: var(--button-shadow);
     }
 
-    &:active {
+    &:active:enabled {
         border-color: var(--button-primary);
         outline-width: .25rem;
         outline-color: var(--button-shadow);
@@ -171,6 +171,12 @@ table {
     &:checked:active {
         background-color: var(--button-primary-active);
         border: 1px solid var(--button-primary-active);
+    }
+
+    &:disabled{
+        cursor: not-allowed;
+        background-color: var(--checkbox-disabled);
+        border-color: var(--checkbox-border-disabled);
     }
 }
 
