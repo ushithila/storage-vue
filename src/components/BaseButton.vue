@@ -12,6 +12,7 @@
         {{ title }}
     </button>
 </template>
+
 <script setup lang="ts">
 withDefaults(defineProps<{
     variant?: "primary" | "neutral",
@@ -23,6 +24,7 @@ withDefaults(defineProps<{
     size: "md",
 });
 </script>
+
 <style scoped lang="scss">
 .btn {
     display: flex;
@@ -45,6 +47,10 @@ withDefaults(defineProps<{
         &:active {
             background-color: var(--button-primary-active);
         }
+
+        &:disabled {
+            background-color: var(--button-disabled);
+        }
     }
 
     &-neutral {
@@ -53,6 +59,11 @@ withDefaults(defineProps<{
         &:hover {
             background-color: var(--border);
         }
+
+        &:disabled {
+            color: var(--button-disabled);
+        }
+
     }
 
     &-xs {
@@ -73,14 +84,6 @@ withDefaults(defineProps<{
     &:disabled {
         pointer-events: none;
         cursor: default;
-        
-        &.btn-primary {
-            background-color: var(--button-disabled);
-        }
-
-        &.btn-neutral {
-            color: var(--button-disabled);
-        }
-    }   
+    }
 }
 </style>

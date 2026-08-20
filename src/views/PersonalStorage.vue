@@ -1,37 +1,38 @@
 <template>
-    <main>
+    <div class="storage-container">
         <h1>Storage</h1>
         <div class="action-bar">
-            <b> My files </b>
+            <b>My files</b>
             <BaseButton
                 title="Add new"
                 variant="primary"
                 class="add-button"
-                disabled
             >
                 <template #icon>
-                    <FontAwesomeIcon :icon="faPlus"/>
+                    <FontAwesomeIcon 
+                    :icon="faPlus"
+                    />
                 </template>
             </BaseButton>
         </div>
         <StorageTable />
-    </main>
+    </div>
 </template>
+
 <script setup lang="ts">
 import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
 </script>
+
 <style scoped lang="scss">
-main {
+.storage-container {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 5rem);
     border: 1px solid var(--container);
     border-radius: 10px;
-    background: var(--secondary-background);
     margin: 1.5rem;
     padding-bottom: 0.5rem;
 }
@@ -59,7 +60,7 @@ h1 {
 }
 
 .add-button {
-    width: 100%;
-    padding: .625rem;
+    width: fit-content;
+    padding: 0 .625rem;
 }
 </style>

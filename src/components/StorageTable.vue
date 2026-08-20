@@ -18,13 +18,13 @@
                     </th>
                 </tr>
             </thead>
-            <tbody v-if="!data.length">
+            <tbody>
                 <tr class="table-row">
                     <td>
                         <input
                             class="checkbox" 
                             type="checkbox"
-                        >
+                        />
                     </td>
                     <td>
                         <FontAwesomeIcon 
@@ -40,7 +40,6 @@
                         <BaseButton
                             variant="neutral"
                             class="action-button"
-                            disabled
                         >
                             <template #icon>
                                 <FontAwesomeIcon :icon="faEllipsisVertical"/>
@@ -49,9 +48,6 @@
                     </td>
                 </tr>
             </tbody>
-            <template v-else>
-                No items available.
-            </template>
         </table>
     </section>
 </template>
@@ -79,9 +75,8 @@ const schema: Array<StorageSchema> = [
         name: 'Actions',
     }
 ];
-// turn into prop, and pass that in table
-const data: Array<string> = [];
 </script> 
+
 <style scoped lang="scss">
 table {
     font-size: 16px;
@@ -146,14 +141,14 @@ table {
     border: 1px solid var(--text);
     cursor: pointer;
 
-    &:hover:enabled {
+    &:not(:disabled):hover {
         border-color: var(--button-primary);
         outline-style: solid;
         outline-width: 2px;
         outline-color: var(--button-shadow);
     }
 
-    &:active:enabled {
+    &:not(:disabled):active {
         border-color: var(--button-primary);
         outline-width: .25rem;
         outline-color: var(--button-shadow);
@@ -173,7 +168,7 @@ table {
         border: 1px solid var(--button-primary-active);
     }
 
-    &:disabled{
+    &:disabled {
         cursor: not-allowed;
         background-color: var(--checkbox-disabled);
         border-color: var(--checkbox-border-disabled);
