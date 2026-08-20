@@ -7,6 +7,7 @@
                 title="Add new"
                 variant="primary"
                 class="add-button"
+                disabled
             >
                 <template #icon>
                     <FontAwesomeIcon :icon="faPlus"/>

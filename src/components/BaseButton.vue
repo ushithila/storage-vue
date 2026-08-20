@@ -38,11 +38,11 @@ withDefaults(defineProps<{
         background-color: var(--button-primary);
         color: var(--button-text-primary);
 
-        &:hover:enabled {
+        &:hover {
             background-color: var(--button-primary-hover);
         }
         
-        &:active:enabled {
+        &:active {
             background-color: var(--button-primary-active);
         }
     }
@@ -50,7 +50,7 @@ withDefaults(defineProps<{
     &-neutral {
         color: var(--button-neutral);
 
-        &:hover:enabled {
+        &:hover {
             background-color: var(--border);
         }
     }
@@ -71,9 +71,10 @@ withDefaults(defineProps<{
     }
 
     &:disabled {
+        pointer-events: none;
+
         &.btn-primary {
             background-color: var(--button-disabled);
-            cursor: default;
         }
 
         &.btn-neutral {
