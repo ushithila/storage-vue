@@ -42,7 +42,7 @@ withDefaults(defineProps<{
             background-color: var(--button-primary-hover);
         }
         
-        &:active {
+        &:active:enabled {
             background-color: var(--button-primary-active);
         }
     }
