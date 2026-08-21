@@ -69,16 +69,31 @@ withDefaults(defineProps<{
     &-xs {
         height: 1.5rem;
         width: 1.5rem;
+
+        :slotted(svg) {
+            height: 0.75rem;
+            width: 0.75rem;
+        }
     }
 
     &-s {
         height: 2rem;
         width: 2rem;
+
+        :slotted(svg) {
+            height: 0.75rem;
+            width: 0.75rem;
+        }
     }
 
     &-md {
         height: 2.5rem;
         width: 2.5rem;
+
+        svg {
+            height: 1rem;
+            width: 1rem;
+        }
     }
 
     &:disabled {

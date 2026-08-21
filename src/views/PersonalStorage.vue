@@ -35,6 +35,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
     border-radius: 10px;
     margin: 1.5rem;
     padding-bottom: 0.5rem;
+    background: var(--secondary-background);
 }
 
 h1 {
