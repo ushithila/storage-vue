@@ -56,13 +56,19 @@ withDefaults(defineProps<{
 
     &-neutral {
         color: var(--button-neutral);
+        fill: var(--button-neutral);
 
         &:hover {
-            background-color: var(--border);
+            background-color: var(--button-neutral-hover);
+        }
+
+        &:active {
+            background-color: var(--button-neutral-active);
         }
 
         &:disabled {
             color: var(--button-disabled);
+            fill: var(--button-disabled);
         }
 
     }

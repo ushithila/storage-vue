@@ -17,6 +17,7 @@
             </BaseButton>
         </div>
         <StorageTable />
+        <Pagination />
     </div>
 </template>
 
@@ -25,6 +26,7 @@ import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import Pagination from '@/components/Pagination.vue';
 </script>
 
 <style scoped lang="scss">
