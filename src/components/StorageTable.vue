@@ -40,7 +40,7 @@
                         <BaseButton
                             variant="neutral"
                             class="action-button"
-                            @click="console.log('Dropdown button clicked')"                         
+                            @btn-click="console.log('Dropdown button clicked')"                         
                         >
                             <template #icon>
                                 <FontAwesomeIcon :icon="faEllipsisVertical"/>
