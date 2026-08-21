@@ -7,6 +7,7 @@
             `btn-${variant}`,
             `btn-${size}`,
         ]"
+        @click="$emit('btn-click')"
     >
         <slot name="icon" />
         {{ title }}

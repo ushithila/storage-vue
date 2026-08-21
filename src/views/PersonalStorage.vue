@@ -7,6 +7,7 @@
                 title="Add new"
                 variant="primary"
                 class="add-button"
+                @click="console.log('Add button clicked')"            
             >
                 <template #icon>
                     <FontAwesomeIcon 
