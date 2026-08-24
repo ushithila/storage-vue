@@ -17,7 +17,7 @@
           variant="neutral"
           size="xs"
           class="btn-pagination"    
-          @btn-click="console.log('Previous button clicked')"
+          @btn-click="decrement"
         >
           <template #icon>
               <Chevron />
@@ -30,7 +30,7 @@
           variant="neutral"
           size="xs"
           class="forward"    
-          @btn-click="console.log('Next button clicked')"    
+          @btn-click="increment"    
         >
           <template #icon>
             <Chevron />
@@ -60,9 +60,13 @@ import Skip from '@/svg/Skip.vue';
 
 const currentPage = defineModel<number>({ default: 1 }); 
 
-defineProps<{
+const props = defineProps<{
    totalPages: number,
 }>();
+
+const increment = () => currentPage.value >= props.totalPages || currentPage.value++; 
+const decrement = () => currentPage.value <= 1 || currentPage.value--; 
+
 </script>
 
 <style scoped lang="scss">
