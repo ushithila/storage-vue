@@ -7,7 +7,7 @@ function delay() {
   return new Promise((resolve) => setTimeout(resolve, Math.random() * 500))
 }
 
-function paginate(items, page, pageSize) {
+function paginate(items : Array<object>, page : number, pageSize : number) {
   const totalItems = items.length
   const totalPages = Math.ceil(totalItems / pageSize)
   const offset = (page - 1) * pageSize //skip
@@ -29,7 +29,7 @@ function paginate(items, page, pageSize) {
  * @param {string} path - The directory path to list (e.g. "/projects/alpha/src")
  * @param {{ page?: number, pageSize?: number }} options
  */
-export async function getDirectory(path, { page = 1, pageSize = 50 } = {}) {
+export async function getDirectory(path : string, { page = 1, pageSize = 50 } = {}) {
   await delay()
 
   if (path !== '/' && !knownPaths.has(path)) {
@@ -48,7 +48,7 @@ export async function getDirectory(path, { page = 1, pageSize = 50 } = {}) {
  * @param {string | null} parentId - The GUID of the parent directory, or null for the root
  * @param {{ page?: number, pageSize?: number }} options
  */
-export async function getDirectoryByParentId(parentId, { page = 1, pageSize = 50 } = {}) {
+export async function getDirectoryByParentId(parentId : string | null, { page = 1, pageSize = 50 } = {}) {
   await delay()
 
   if (parentId !== null && !knownIds.has(parentId)) {

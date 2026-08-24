@@ -19,35 +19,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="table-row">
-                    <td>
-                        <input
-                            class="checkbox" 
-                            type="checkbox"
-                        />
-                    </td>
-                    <td>
-                        <FontAwesomeIcon 
-                            :icon="faFolder"
-                            size="lg"
-                            class="directory-icon"
-                        />
-                        Folder name
-                    </td>
-                    <td>Jun 19, 2026</td>
-                    <td>--</td>
-                    <td>
-                        <BaseButton
-                            variant="neutral"
-                            class="action-button"
-                            @btn-click="console.log('Dropdown button clicked')"                         
-                        >
-                            <template #icon>
-                                <FontAwesomeIcon :icon="faEllipsisVertical"/>
-                            </template>
-                        </BaseButton>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -76,6 +47,12 @@ const schema: Array<StorageSchema> = [
         name: 'Actions',
     }
 ];
+
+defineProps({
+    name: String,
+    date: String, 
+    size: String, 
+});
 </script> 
 
 <style scoped lang="scss">

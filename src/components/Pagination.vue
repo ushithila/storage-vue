@@ -54,9 +54,9 @@
 </template>
 
 <script setup lang="ts">
-import BackwardButton from './BackwardButton.vue';
+import BackwardButton from '@/svg/Chevron.vue';
 import BaseButton from './BaseButton.vue';
-import LastButton from '@/components/LastButton.vue';
+import LastButton from '@/svg/Skip.vue';
 </script>
 
 <style scoped lang="scss">
