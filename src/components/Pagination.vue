@@ -24,7 +24,7 @@
           </template>
         </BaseButton>
       </li>
-      <li>1 of 1</li>
+      <li>{{ currentPage }} of {{ totalPages }}</li>
       <li>
         <BaseButton 
           variant="neutral"
@@ -57,6 +57,14 @@
 import BackwardButton from '@/svg/Chevron.vue';
 import BaseButton from './BaseButton.vue';
 import LastButton from '@/svg/Skip.vue';
+
+const currentPage = defineModel({default: 1})
+
+withDefaults(defineProps<{
+   totalPages: number,
+}>(), {
+  totalPages: 1,
+});
 </script>
 
 <style scoped lang="scss">
