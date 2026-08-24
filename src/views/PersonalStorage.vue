@@ -25,7 +25,7 @@
         />
         <Pagination 
           v-model="currentPage"
-          :total-pages=1
+          :total-pages="totalPages"
         />
     </div>
 </template>
@@ -39,6 +39,7 @@ import Pagination from '@/components/Pagination.vue';
 import { ref } from 'vue';
 
 const currentPage = ref(1);
+const totalPages = ref(10);
 
 const sampleData = ref([
     {
