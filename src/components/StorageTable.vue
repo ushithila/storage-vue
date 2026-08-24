@@ -19,6 +19,35 @@
                 </tr>
             </thead>
             <tbody>
+                <tr class="table-row">
+                    <td>
+                        <input
+                            class="checkbox" 
+                            type="checkbox"
+                        >
+                    </td>
+                    <td>
+                        <FontAwesomeIcon 
+                            :icon="faFolder"
+                            size="lg"
+                            class="directory-icon"
+                        />
+                        {{ name }}
+                    </td>
+                    <td>{{ date }}</td>
+                    <td>{{ size }}</td>
+                    <td>
+                        <BaseButton
+                            variant="neutral"
+                            class="action-button"
+                            disabled
+                        >
+                            <template #icon>
+                                <FontAwesomeIcon :icon="faEllipsisVertical"/>
+                            </template>
+                        </BaseButton>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -48,11 +77,11 @@ const schema: Array<StorageSchema> = [
     }
 ];
 
-defineProps({
-    name: String,
-    date: String, 
-    size: String, 
-});
+defineProps<{
+    name: string,
+    date: string, 
+    size: number, 
+}>();
 </script> 
 
 <style scoped lang="scss">

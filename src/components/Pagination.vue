@@ -8,7 +8,7 @@
           @btn-click="console.log('First button clicked')"
         >
           <template #icon>
-            <LastButton />
+            <Skip />
           </template>
         </BaseButton>
       </li>
@@ -20,7 +20,7 @@
           @btn-click="console.log('Previous button clicked')"
         >
           <template #icon>
-              <BackwardButton />
+              <Chevron />
           </template>
         </BaseButton>
       </li>
@@ -33,7 +33,7 @@
           @btn-click="console.log('Next button clicked')"    
         >
           <template #icon>
-            <BackwardButton />
+            <Chevron />
           </template>
         </BaseButton>
       </li>
@@ -45,7 +45,7 @@
           @btn-click="console.log('Last button clicked')"    
         >
           <template #icon>
-              <LastButton />
+              <Skip />
           </template>
         </BaseButton>
       </li>
@@ -54,17 +54,15 @@
 </template>
 
 <script setup lang="ts">
-import BackwardButton from '@/svg/Chevron.vue';
+import Chevron from '@/svg/ChevronArrow.vue';
 import BaseButton from './BaseButton.vue';
-import LastButton from '@/svg/Skip.vue';
+import Skip from '@/svg/Skip.vue';
 
-const currentPage = defineModel({default: 1})
+const currentPage = defineModel<number>({ default: 1 }); 
 
-withDefaults(defineProps<{
+defineProps<{
    totalPages: number,
-}>(), {
-  totalPages: 1,
-});
+}>();
 </script>
 
 <style scoped lang="scss">
