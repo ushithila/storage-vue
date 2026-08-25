@@ -24,6 +24,10 @@ withDefaults(defineProps<{
     variant: "primary",
     size: "md",
 });
+
+defineEmits<{
+    (e: 'btn-click'): void,
+}>()
 </script>
 
 <style scoped lang="scss">

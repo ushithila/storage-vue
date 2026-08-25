@@ -8,6 +8,7 @@
                             id="select-all-checkbox"
                             class="checkbox"
                             type="checkbox"
+                            :checked="items.length === selected.length"
                         />
                     </th>
                     <th
@@ -23,11 +24,13 @@
                     v-for="(item, index) in items"
                     :key="`${index}-${item.id}`"
                     class="table-row"
+                    @click="emit('select', index + 1)"
                 >
                     <td>
                         <input
                             class="checkbox" 
                             type="checkbox"
+                            :checked="selected.includes(index + 1)"
                         />
                     </td>
                     <td>
@@ -72,8 +75,12 @@ import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons'
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 
 defineProps<{
-    selected: Array<number>;
     items : Array<FileEntry>;
+    selected: Array<number>;
+}>();
+
+const emit = defineEmits<{
+    (e: 'select', value: number): void,
 }>();
 
 const schema: Array<StorageSchema> = [
@@ -196,6 +203,10 @@ const schema: Array<StorageSchema> = [
         cursor: not-allowed;
         background-color: var(--checkbox-disabled);
         border-color: var(--checkbox-border-disabled);
+    }
+
+    &:indeterminate {
+        background-color: red;
     }
 }
 

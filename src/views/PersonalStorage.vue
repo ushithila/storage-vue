@@ -16,7 +16,18 @@
                 </template>
             </base-button>
         </div>
-        <storage-table :items="sampleData" :selected="[1, 2]" />
+        <storage-table 
+            :items="sampleData" 
+            :selected="selected"
+            @select="(ind: number) => {
+                if(selected.includes(ind)) {
+                    selected.splice(selected.indexOf(ind), 1);
+                }else{
+                    selected.push(ind);
+                }
+                console.log(ind, selected);
+            }"
+        />{{ selected }}
         <pagination 
           v-model="currentPage"
           :total-pages="totalPages"
@@ -35,6 +46,8 @@ import { FileEntry } from '@/interfaces/FileEntry';
 
 const currentPage = ref(1);
 const totalPages = ref(10);
+
+const selected = ref<number[]>([]);
 
 const sampleData: Array<FileEntry> = [
     {
