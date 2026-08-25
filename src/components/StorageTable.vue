@@ -65,10 +65,11 @@
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
 import BaseButton from '@/components/BaseButton.vue';
-import { faEllipsisVertical, faFile, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { FileEntry } from '@/interfaces/FileEntry';
 import { convertDateFormat } from '@/utils/Date';
+import { faFile } from '@fortawesome/free-regular-svg-icons';
 
 defineProps<{
     items : Array<FileEntry>;
