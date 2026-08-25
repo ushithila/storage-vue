@@ -38,7 +38,7 @@
                         />
                         {{ item.name }}
                     </td>
-                    <td>{{ item.createdAt }}</td>
+                    <td>{{ convertDateFormat(item.createdAt) }}</td>
                     <td>{{ item.size }}</td>
                     <td>
                         <BaseButton
@@ -61,6 +61,7 @@ import BaseButton from '@/components/BaseButton.vue';
 import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { FileEntry } from '@/interfaces/FileEntry';
+import { convertDateFormat } from '@/utils/Date';
 
 defineProps<{
     items : Array<FileEntry>;
