@@ -32,14 +32,21 @@
                     </td>
                     <td>
                         <FontAwesomeIcon 
+                            v-if="item.type==='directory'"
                             :icon="faFolder"
                             size="lg"
                             class="directory-icon"
                         />
+                        <FontAwesomeIcon 
+                            v-else
+                            :icon="faFile"
+                            size="lg"
+                            class="file-icon"
+                        />
                         {{ item.name }}
                     </td>
                     <td>{{ convertDateFormat(item.createdAt) }}</td>
-                    <td>{{ item.size }}</td>
+                    <td>{{ item.size || "--" }}</td>
                     <td>
                         <BaseButton
                             variant="neutral"
@@ -58,7 +65,7 @@
 <script setup lang="ts">
 import { StorageSchema } from '@/interfaces/StorageSchema';
 import BaseButton from '@/components/BaseButton.vue';
-import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faFile, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { FileEntry } from '@/interfaces/FileEntry';
 import { convertDateFormat } from '@/utils/Date';
@@ -187,5 +194,9 @@ table {
 
 .directory-icon {
     color: var(--directory-icon);
+}
+
+.file-icon {
+    color: var(--file-icon);
 }
 </style>
