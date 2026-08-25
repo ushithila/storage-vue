@@ -1,4 +1,4 @@
 export interface StorageSchema {
-    keyName: string,
-    name: string,
+    keyName: string;
+    name: string;
 };

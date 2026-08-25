@@ -16,13 +16,7 @@
                 </template>
             </BaseButton>
         </div>
-        <StorageTable            
-            v-for="(item, index) in sampleData"
-            :key="`${index}-${item.name}`"
-            :name="item.name"
-            :date="item.createdAt"
-            :size="item.size"
-        />
+        <StorageTable :items="sampleData" />
         <Pagination 
           v-model="currentPage"
           :total-pages="totalPages"
@@ -37,43 +31,46 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Pagination from '@/components/Pagination.vue';
 import { ref } from 'vue';
+import { FileEntry } from '@/interfaces/FileEntry';
 
 const currentPage = ref(1);
 const totalPages = ref(10);
 
-const sampleData = ref([
+const sampleData: Array<FileEntry> = [
     {
+    "id": "347fc4be-5ced-4369-a08c-ddb9c171bc71",
     "name": "/",
+    "path": "/",
+    "parentPath": null,
+    "parentId": null,
+    "type": "directory",
     "size": 0,
     "createdAt": "2025-06-27T18:16:50.136Z",
+    "modifiedAt": "2024-04-04T14:35:27.433Z"
   },
   {
+    "id": "b25c002f-99b0-48be-8ed0-1ea035251cec",
     "name": "projects",
+    "path": "/projects",
+    "parentPath": "/",
+    "parentId": "347fc4be-5ced-4369-a08c-ddb9c171bc71",
+    "type": "file",
     "size": 0,
     "createdAt": "2025-06-15T02:19:45.377Z",
+    "modifiedAt": "2025-08-27T04:26:50.115Z"
   },
   {
+    "id": "237bf115-8182-48c6-8f09-2bf9f6e19bcc",
     "name": "home",
+    "path": "/home",
+    "parentPath": "/",
+    "parentId": "347fc4be-5ced-4369-a08c-ddb9c171bc71",
+    "type": "directory",
     "size": 0,
     "createdAt": "2024-11-21T10:13:12.982Z",
+    "modifiedAt": "2025-01-10T23:12:53.607Z"
   },
-  {
-    "name": "var",
-    "size": 0,
-    "createdAt": "2025-11-13T17:56:10.375Z",
-  },
-  {
-    "name": "usr",
-    "size": 0,
-    "createdAt": "2023-05-10T06:32:55.253Z",
-  },
-  {
-    "name": "etc",
-    "size": 0,
-    "createdAt": "2025-02-26T21:23:21.442Z",
-
-  },
-]);
+];
 </script>
 
 <style scoped lang="scss">

@@ -19,7 +19,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="table-row">
+                <tr 
+                    v-for="(item, index) in items"
+                    :key="`${index}-${item.name}`"
+                    class="table-row"
+                >
                     <td>
                         <input
                             class="checkbox" 
@@ -32,15 +36,14 @@
                             size="lg"
                             class="directory-icon"
                         />
-                        {{ name }}
+                        {{ item.name }}
                     </td>
-                    <td>{{ date }}</td>
-                    <td>{{ size }}</td>
+                    <td>{{ item.createdAt }}</td>
+                    <td>{{ item.size }}</td>
                     <td>
                         <BaseButton
                             variant="neutral"
                             class="action-button"
-                            disabled
                         >
                             <template #icon>
                                 <FontAwesomeIcon :icon="faEllipsisVertical"/>
@@ -57,6 +60,11 @@ import { StorageSchema } from '@/interfaces/StorageSchema';
 import BaseButton from '@/components/BaseButton.vue';
 import { faEllipsisVertical, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { FileEntry } from '@/interfaces/FileEntry';
+
+defineProps<{
+    items : Array<FileEntry>;
+}>();
 
 const schema: Array<StorageSchema> = [
     {
@@ -76,12 +84,6 @@ const schema: Array<StorageSchema> = [
         name: 'Actions',
     }
 ];
-
-defineProps<{
-    name: string,
-    date: string, 
-    size: number, 
-}>();
 </script> 
 
 <style scoped lang="scss">

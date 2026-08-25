@@ -6,7 +6,7 @@
           variant="neutral"
           size="xs"
           :disabled="currentPage === 1"
-          @btn-click="first"
+          @btn-click="currentPage = 1"
         >
           <template #icon>
             <Skip />
@@ -19,7 +19,7 @@
           size="xs"
           class="btn-pagination"  
           :disabled="currentPage === 1"  
-          @btn-click="decrement"
+          @btn-click="currentPage <= 1 || currentPage--"
         >
           <template #icon>
               <Chevron />
@@ -33,7 +33,7 @@
           size="xs"
           class="forward"    
           :disabled="currentPage === totalPages"    
-          @btn-click="increment"    
+          @btn-click="currentPage >= totalPages || currentPage++"    
         >
           <template #icon>
             <Chevron />
@@ -46,7 +46,7 @@
           size="xs"
           class="forward"
           :disabled="currentPage === totalPages"    
-          @btn-click="last"    
+          @btn-click="currentPage = totalPages"    
         >
           <template #icon>
               <Skip />
@@ -62,17 +62,11 @@ import Chevron from '@/svg/ChevronArrow.vue';
 import BaseButton from './BaseButton.vue';
 import Skip from '@/svg/ForwardChevron.vue';
 
-const currentPage = defineModel<number>({ default: 1 }); 
-
-const props = defineProps<{
+defineProps<{
    totalPages: number,
 }>();
 
-const increment = () => currentPage.value >= props.totalPages || currentPage.value++; 
-const decrement = () => currentPage.value <= 1 || currentPage.value--; 
-const last = () => currentPage.value = props.totalPages;
-const first = () => currentPage.value = 1;
-
+const currentPage = defineModel<number>({ default: 1 }); 
 </script>
 
 <style scoped lang="scss">
