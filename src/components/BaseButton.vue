@@ -95,7 +95,7 @@ withDefaults(defineProps<{
         height: 2.5rem;
         width: 2.5rem;
 
-        svg {
+        :slotted(svg) {
             height: 1rem;
             width: 1rem;
         }

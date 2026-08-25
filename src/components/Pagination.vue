@@ -2,19 +2,19 @@
   <div class="pagination-container">
     <ul>
       <li>
-        <BaseButton 
+        <base-button 
           variant="neutral"
           size="xs"
           :disabled="currentPage === 1"
           @btn-click="currentPage = 1"
         >
           <template #icon>
-            <Skip />
+            <forward-arrow-svg />
           </template>
-        </BaseButton>
+        </base-button>
       </li>
       <li>
-        <BaseButton 
+        <base-button 
           variant="neutral"
           size="xs"
           class="btn-pagination"  
@@ -22,13 +22,13 @@
           @btn-click="currentPage <= 1 || currentPage--"
         >
           <template #icon>
-              <Chevron />
+              <arrow-svg />
           </template>
-        </BaseButton>
+        </base-button>
       </li>
       <li>{{ currentPage }} of {{ totalPages }}</li>
       <li>
-        <BaseButton 
+        <base-button 
           variant="neutral"
           size="xs"
           class="forward"    
@@ -36,12 +36,12 @@
           @btn-click="currentPage >= totalPages || currentPage++"    
         >
           <template #icon>
-            <Chevron />
+            <arrow-svg />
           </template>
-        </BaseButton>
+        </base-button>
       </li>
       <li>
-        <BaseButton 
+        <base-button 
           variant="neutral"
           size="xs"
           class="forward"
@@ -49,18 +49,18 @@
           @btn-click="currentPage = totalPages"    
         >
           <template #icon>
-              <Skip />
+              <forward-arrow-svg />
           </template>
-        </BaseButton>
+        </base-button>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
-import Chevron from '@/svg/ChevronArrow.vue';
 import BaseButton from './BaseButton.vue';
-import Skip from '@/svg/ForwardChevron.vue';
+import ArrowSvg from '@/svg/ArrowSvg.vue';
+import ForwardArrowSvg from '@/svg/ForwardArrowSvg.vue';
 
 defineProps<{
    totalPages: number,
@@ -85,7 +85,7 @@ ul {
     gap: 0.25rem;
 
   li {
-      &:nth-child(3) {
+      &:nth-last-child(3) {
         display: flex;
         align-items: center;
         width: 100%;

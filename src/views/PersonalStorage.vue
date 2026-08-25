@@ -3,21 +3,21 @@
         <h1>Storage</h1>
         <div class="action-bar">
             <b>My files</b>
-            <BaseButton
+            <base-button
                 title="Add new"
                 variant="primary"
                 class="add-button"
                 @btn-click="console.log('Add button clicked')"            
             >
                 <template #icon>
-                    <FontAwesomeIcon 
+                    <font-awesome-icon 
                     :icon="faPlus"
                     />
                 </template>
-            </BaseButton>
+            </base-button>
         </div>
-        <StorageTable :items="sampleData" />
-        <Pagination 
+        <storage-table :items="sampleData" :selected="[1, 2]" />
+        <pagination 
           v-model="currentPage"
           :total-pages="totalPages"
         />
@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import StorageTable from '@/components/StorageTable.vue';
 import BaseButton from '@/components/BaseButton.vue';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Pagination from '@/components/Pagination.vue';
 import { ref } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FileEntry } from '@/interfaces/FileEntry';
 
 const currentPage = ref(1);
