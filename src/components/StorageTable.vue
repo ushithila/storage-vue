@@ -8,6 +8,7 @@
                             id="select-all-checkbox"
                             class="checkbox"
                             type="checkbox"
+                            :indeterminate="1 <= selected.length && selected.length < items.length"
                             :checked="items.length === selected.length"
                         />
                     </th>
@@ -206,7 +207,9 @@ const schema: Array<StorageSchema> = [
     }
 
     &:indeterminate {
-        background-color: red;
+        background-color: var(--button-primary);
+        border: 1px solid var(--button-primary);
+       content: url('../../public/assets/minus.svg');
     }
 }
 

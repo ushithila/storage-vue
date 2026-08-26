@@ -25,7 +25,6 @@
                 }else{
                     selected.push(ind);
                 }
-                console.log(ind, selected);
             }"
         />{{ selected }}
         <pagination 
