@@ -26,7 +26,7 @@
                     selected.push(ind);
                 }
             }"
-        />{{ selected }}
+        />
         <pagination 
           v-model="currentPage"
           :total-pages="totalPages"
